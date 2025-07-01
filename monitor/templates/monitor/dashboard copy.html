@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Gate Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        .graphs {
+            flex: 1;
+        }
+        .graphs canvas {
+            margin-bottom: 30px;
+            width: 100% !important;
+            height: 250px !important;
+        }
+        .table-wrapper {
+            flex: 1;
+            overflow-x: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 600px;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 8px 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sensor Data Dashboard</h1>
+    <div class="container">
+        <!-- 왼쪽: 그래프 영역 -->
+        <div class="graphs">
+            <canvas id="temperatureChart"></canvas>
+            <canvas id="humidityChart"></canvas>
+            <canvas id="distanceChart"></canvas>
+        </div>
+
+        <!-- 오른쪽: 데이터 테이블 -->
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Distance (cm)</th>
+                        <th>Temperature (°C)</th>
+                        <th>Humidity (%)</th>
+                        <th>Accel X</th>
+                        <th>Accel Y</th>
+                        <th>Accel Z</th>
+                        <th>Gate Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in data %}
+                    <tr>
+                        <td>{{ entry.timestamp }}</td>
+                        <td>{{ entry.distance }}</td>
+                        <td>{{ entry.temperature }}</td>
+                        <td>{{ entry.humidity }}</td>
+                        <td>{{ entry.accel_x }}</td>
+                        <td>{{ entry.accel_y }}</td>
+                        <td>{{ entry.accel_z }}</td>
+                        <td>{{ entry.gate_status }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<script>
+    const sensorData = JSON.parse('{{ data_json|escapejs }}');
+
+    const timestamps = sensorData.map(entry => entry.timestamp);
+    const temperature = sensorData.map(entry => entry.temperature);
+    const humidity = sensorData.map(entry => entry.humidity);
+    const distance = sensorData.map(entry => entry.distance);
+
+    function createChart(ctx, label, labels, data, borderColor) {
+        return new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: label,
+                    data: data,
+                    borderColor: borderColor,
+                    backgroundColor: 'rgba(0,0,0,0)',
+                    fill: false,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Time'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: label
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    window.onload = function() {
+        const tempCtx = document.getElementById('temperatureChart').getContext('2d');
+        const humidityCtx = document.getElementById('humidityChart').getContext('2d');
+        const distanceCtx = document.getElementById('distanceChart').getContext('2d');
+
+        createChart(tempCtx, 'Temperature (°C)', timestamps, temperature, 'red');
+        createChart(humidityCtx, 'Humidity (%)', timestamps, humidity, 'blue');
+        createChart(distanceCtx, 'Distance (cm)', timestamps, distance, 'green');
+    }
+</script>
+
+</body>
+</html>

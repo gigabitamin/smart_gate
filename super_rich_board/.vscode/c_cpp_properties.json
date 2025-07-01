@@ -1,0 +1,81 @@
+{
+  "configurations": [
+    {
+      "name": "Arduino",
+      "includePath": [
+        "C:\\Users\\gigab\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino/**",
+        "C:\\Users\\gigab\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega/**",
+        "C:\\Users\\gigab\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries\\MPU6050\\src/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries\\Adafruit_SSD1306/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries\\Adafruit_GFX_Library/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries\\Adafruit_BusIO/**",
+        "C:\\Users\\gigab\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries\\Adafruit_SHT31/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries\\NewPing-master/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries\\Servo\\src/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries\\Adafruit_LED_Backpack_Library/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries\\TM1637/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries\\LiquidCrystal_I2C/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries\\HUSKYLENS/**",
+        "C:\\Users\\gigab\\Documents\\Arduino\\libraries/**",
+        "C:\\AIWorkspace\\super_rich_board/**"
+      ],
+      "forcedInclude": [
+        "C:\\Users\\gigab\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino\\Arduino.h"
+      ],
+      "compilerPath": "C:\\Users\\gigab\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+      "compilerArgs": [
+        "C:\\Users\\gigab\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+        "-c",
+        "-g",
+        "-Os",
+        "-w",
+        "-std=gnu++11",
+        "-fpermissive",
+        "-fno-exceptions",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-fno-threadsafe-statics",
+        "-Wno-error=narrowing",
+        "-MMD",
+        "-flto",
+        "-mmcu=atmega2560",
+        "-DF_CPU=16000000L",
+        "-DARDUINO=10607",
+        "-DARDUINO_AVR_MEGA2560",
+        "-DARDUINO_ARCH_AVR",
+        "-IC:\\Users\\gigab\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+        "-IC:\\Users\\gigab\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+        "-IC:\\Users\\gigab\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src",
+        "-IC:\\Users\\gigab\\Documents\\Arduino\\libraries\\MPU6050\\src",
+        "-IC:\\Users\\gigab\\Documents\\Arduino\\libraries\\Adafruit_SSD1306",
+        "-IC:\\Users\\gigab\\Documents\\Arduino\\libraries\\Adafruit_GFX_Library",
+        "-IC:\\Users\\gigab\\Documents\\Arduino\\libraries\\Adafruit_BusIO",
+        "-IC:\\Users\\gigab\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+        "-IC:\\Users\\gigab\\Documents\\Arduino\\libraries\\Adafruit_SHT31",
+        "-IC:\\Users\\gigab\\Documents\\Arduino\\libraries\\NewPing-master",
+        "-IC:\\Users\\gigab\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel",
+        "-IC:\\Users\\gigab\\Documents\\Arduino\\libraries\\Servo\\src",
+        "-IC:\\Users\\gigab\\Documents\\Arduino\\libraries\\Adafruit_LED_Backpack_Library",
+        "-IC:\\Users\\gigab\\Documents\\Arduino\\libraries\\TM1637",
+        "-IC:\\Users\\gigab\\Documents\\Arduino\\libraries\\LiquidCrystal_I2C",
+        "-IC:\\Users\\gigab\\Documents\\Arduino\\libraries\\HUSKYLENS",
+        "C:\\AIWorkspace\\super_rich_board\\build\\sketch\\super_rich_board.ino.cpp",
+        "-o",
+        "C:\\AIWorkspace\\super_rich_board\\build\\sketch\\super_rich_board.ino.cpp.o"
+      ],
+      "defines": [
+        "F_CPU=16000000L",
+        "ARDUINO=10607",
+        "ARDUINO_AVR_MEGA2560",
+        "ARDUINO_ARCH_AVR",
+        "USBCON"
+      ],
+      "cStandard": "c17",
+      "cppStandard": "c++17"
+    }
+  ],
+  "version": 4
+}

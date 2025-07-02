@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Gate Monitoring System </title>
+    <style>
+        /* Google Fonts & Reset CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Header & Title Section */
+        header {
+            background: linear-gradient(135deg, #0A1931, #185ADB);
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 5px solid #FFC947;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-family: 'Gowun Dodum', serif;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Main Content Container */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Card Style for Sections */
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            color: #0A1931;
+            border-left: 5px solid #185ADB;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Specific Content Styling */
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="%23185ADB"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat left center;
+            background-size: 20px;
+            padding-left: 30px;
+            margin-bottom: 1rem;
+        }
+
+        strong {
+            color: #185ADB;
+            font-weight: 700;
+        }
+        
+        /* Architecture & Flow Diagram Style */
+        .flow-diagram {
+            text-align: center;
+        }
+        .flow-box {
+            background-color: #eef3f9;
+            border: 1px solid #c9d9ea;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.5rem auto;
+            max-width: 60%;
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #FFC947;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+
+        /* Challenges & Solutions Table Style */
+        .challenge-solution {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1rem;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+        .challenge-solution:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .challenge-title {
+            font-weight: 700;
+            color: #e63946;
+            text-align: right;
+            padding-right: 1rem;
+            border-right: 2px solid #eee;
+        }
+
+        /* Reflection blockquote style */
+        blockquote {
+            background: #f9f9f9;
+            border-left: 5px solid #FFC947;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+        blockquote p {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Smart Gate Monitoring System</h1>
+        <p>아두이노와 Django를 활용한 지능형 차량 통제 시스템</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="card">
+            <h2>프로젝트 개요 (Overview)</h2>
+            <p>본 프로젝트는 저비용 하드웨어를 기반으로 지능형 차량 통제 및 실시간 데이터 모니터링 시스템을 구현하는 것을 목표로 합니다.</p>
+            <ul>
+                <li><strong>개발 기간:</strong> 2025. 06. 10 ~ 2025. 06. 30</li>
+                <li><strong>H/W:</strong> Arduino Mega 2560, HuskyLens, 초음파 센서, MPU6050, SHT31 등</li>
+                <li><strong>S/W:</strong> Python (Django), C, MySQL, VSCode</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>시스템 아키텍처 (System Architecture)</h2>
+            <div class="flow-diagram">
+                <div class="flow-box"><strong>Sensing Layer</strong> (초음파, HuskyLens 등)</div>
+                <p class="flow-arrow">▼</p>
+                <div class="flow-box"><strong>Edge Control Layer</strong> (Arduino Mega2560)</div>
+                <p class="flow-arrow">▼</p>
+                <div class="flow-box"><strong>Server & Analytics Layer</strong> (Django & MySQL)</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>핵심 기능 (Key Features)</h2>
+            <ul>
+                <li><strong>지능형 출입 통제:</strong> HuskyLens 태그 인식 기반, 허가된 차량만 자동 통과</li>
+                <li><strong>실시간 모니터링:</strong> 웹 대시보드를 통해 다중 센서 데이터 시각화</li>
+                <li><strong>데이터 기반 분석:</strong> 수집된 로그 기반 통계 제공 (차량 통행량, PASS/STOP 비율)</li>
+                <li><strong>원격 제어 및 안전 모드:</strong> 웹을 통한 원격 차단기 제어 및 시스템 비활성화</li>
+            </ul>
+        </section>
+        
+        <section class="card">
+            <h2>기술적 도전과 해결 (Challenges & Solutions)</h2>
+            <div class="challenge-solution">
+                <div class="challenge-title">센서 신호 충돌 및 오작동</div>
+                <div><strong>Debounce 및 비동기 처리</strong> 로직을 구현하여 시스템 안정성 확보</div>
+            </div>
+            <div class="challenge-solution">
+                <div class="challenge-title">다중 센서 데이터 통합 관리</div>
+                <div>각 센서 기능을 <strong>독립적 함수로 모듈화</strong>하여 유지보수성 및 확장성 향상</div>
+            </div>
+            <div class="challenge-solution">
+                <div class="challenge-title">H/W와 웹 간의 통신 지연</div>
+                <div><strong>시리얼 통신 프로토콜 최적화</strong> 및 Django REST API 구성으로 실시간 데이터 전송 구현</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>프로젝트 회고 (Reflection)</h2>
+            <blockquote>
+                <p><strong>하드웨어 한계의 S/W적 극복:</strong> 비동기 처리의 중요성을 체감하고 소프트웨어 아키텍처로 하드웨어의 물리적 한계를 극복했습니다.</p>
+            </blockquote>
+            <blockquote>
+                <p><strong>데이터 신뢰성과 엣지 컴퓨팅:</strong> 센서 노이즈를 다루며, 정확한 데이터 처리를 위한 엣지 단에서의 데이터 전처리의 필요성을 배웠습니다.</p>
+            </blockquote>
+             <blockquote>
+                <p><strong>사용자 경험(UX)과 Fail-Safe 설계:</strong> 사용자 관점의 명확한 피드백과 시스템 고장 시 안전을 보장하는 Fail-Safe 설계의 핵심을 파악했습니다.</p>
+            </blockquote>
+        </section>
+
+        <section class="card">
+            <h2>향후 목표 (Future Goals)</h2>
+            <ul>
+                <li><strong>무선 통신 적용:</strong> ESP32/8266 모듈을 추가하여 물리적 제약 없는 원격 제어 기능 구현</li>
+                <li><strong>분석 기능 고도화:</strong> 머신러닝을 활용한 특정 시간대 교통량 예측 모델 개발</li>
+                <li><strong>알림 기능 도입:</strong> 이상 데이터(충격, 고온 등) 감지 시 관리자에게 자동 알림 기능 추가</li>
+            </ul>
+        </section>
+
+    </main>
+
+</body>
+</html>
